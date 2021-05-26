@@ -1,0 +1,178 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+<script>
+    alert(prioridadeAssociada);
+</script>
+ <style>
+   #header{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #03a5fc;
+    margin: 0px;
+    padding: 0px;
+    top: 0%;
+    left: 0%;
+    text-align: right;
+}
+
+body{
+    padding: 0px;
+    margin-top: 0px;
+    background-color: #353a3d;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#left-bar{
+    position: absolute;
+    height: 100vh;
+    width: 19%;
+    max: 30%;
+    background-color: #353a3d;
+    top: 60px;
+    margin: 0px;
+    border-right: solid white 1px;
+    padding: 5px;
+}
+
+#list-itens{
+    background-color: #a2a5a6;
+    border-radius: 10px;
+    font-size: 18px;;
+    padding: 5px;
+    text-align: center;
+}
+
+#dashboard{
+    width: 79%;
+    right: 0%;
+    position: absolute;
+    height: 100vh;
+    top: 60px;
+    background-color: #353a3d;
+
+}
+
+#main{
+    display: inline;
+}
+
+.reclamacao-container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-color: #353a3d;
+
+    
+}
+
+.content-reclamacao{
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid black 1px;
+    border-top: 0px;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+}
+
+.reclamacao{
+    width: 95%;
+    min-height: 100px;
+    max-height: auto;
+    background-color: white;
+    border: black 1px;
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.header-reclamacao{
+    border: solid black 1px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+    background-color: #a2a5a6;
+}
+
+.toggle{
+    display:;
+}
+
+.animate {
+    animation: moveDown 0.6s ease-in-out 0.2s backwards;
+}
+
+.baixa{
+    background-color: green;
+}
+@keyframes moveDown{
+    0% { 
+        transform: translateY(-40px); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(0px);  
+        opacity: 1;
+    }
+}
+
+
+</style>
+<head>
+    <link rel='stylesheet' type='text/css' media='screen' href='/main.css'>
+</head>
+
+    <div id="header">
+        <a href="/" style="float: left;">Sair</a>
+        <h2>Reclame Ali</h2>
+    </div>
+    <div id="main">
+        <div id="left-bar">
+            <h2 style="color: white;">Menu</h2>
+            <div id="list-itens">
+                
+                    Home<br><hr>
+                    Dashboard<br><hr>
+                    Histórico<br><hr>
+                    Relatórios<br><hr>
+                    Equipes<br><hr>
+                    Monitoramento<br>
+                
+            </div>
+        </div>
+        <div id="dashboard">
+            <h2 style="color: white; text-align: center">Dashboard</h2><hr>
+            <div id="reclamacao-container ">
+                <div class="card-content">
+                    {{#each results}}
+                        <div class="reclamacao-container">
+                            <div class="header-reclamacao">
+                                <h2>{{tipoReclamacao}}</h2>
+                            </div>
+                                <div class="content-reclamacao">
+                                    <p>Prioridade associada: {{prioridadeAssociada}}</p>
+                                    <p>CEP: {{local.cep}}</p>
+                                    <p>Complemento: {{local.complemento}}</p>
+                                    <p>Id: {{_id}}</p>
+                                    <form action="/reclamacao/deletar" method="POST">
+                                        <input type="hidden" name="id" value="{{_id}}">
+                                        <button type="submit" style="justify-content: end;">Deletar</button>
+                                    </form>
+                                </div>
+                            </div>
+                            {{else}}
+                                    <h4 style="text-align: center; color: white">Nenhuma reclamação registrada</h4>
+                        {{/each}}
+                        
+                    </div>
+                </div>
+            </div>
+            <br>
+            </div>
+        </div>
+    </div>
+</div>
