@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron');
-const server = require('./app');
+require('./app');
 
 function loadWindow(){
     const janela = new BrowserWindow({

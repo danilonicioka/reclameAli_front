@@ -1,0 +1,50 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<link rel='stylesheet' type='text/css' media='screen' href='/main.css'>
+
+    <div id="header">
+        <a href="/login" style="float: left;">Sair</a>
+        <h2>Reclame Ali</h2>
+    </div>
+    <div id="main">
+        <div id="left-bar">
+            <h2 style="color: white;">Menu</h2>
+            <div id="list-itens">
+                
+                <a href="/">Home<br><hr></a>
+                <a href="/">Dashboard<br><hr></a>
+                <a href="">Histórico<br><hr></a>
+                <a href="">Relatórios<br><hr></a>
+                <a href="/tecnicos">Técnicos<br><hr></a>
+                <a href="">Monitoramento<br></a>
+                
+            </div>
+        </div>
+        <div id="dashboard">
+            <h2 style="color: white; text-align: center">Dashboard</h2><hr>
+            <div id="reclamacao-container ">
+                <div class="card-content">
+                    {{#each results}}
+                        <div class="reclamacao-container">
+                            <div class="header-reclamacao">
+                                <h2>{{nome}}</h2>
+                            </div>
+                                <div class="content-reclamacao">
+                                    <p>Telefone: {{telefone}}</p>
+                                    <p>Disponibilidade: {{estaDisponivel}}</p>
+                                    <p>Id: {{_id}}</p>
+                                </div>
+                            </div>
+                            {{else}}
+                                <h4 style="text-align: center; color: white">Nenhum técnico registrado</h4>
+                        {{/each}}
+                        
+                    </div>
+                </div>
+            </div>
+            <br>
+            </div>
+        </div>
+    </div>
+</div>
