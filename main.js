@@ -10,7 +10,7 @@ function loadWindow(){
         height: 600,
     })
     //Define qual a primeira rota que será aberta ao iniciar electron
-    janela.loadURL('http://localhost:3000/login'); 
+    janela.loadURL('http://localhost:3000/login');
 }
 
 //Cria a janela ao iniciar o electron
