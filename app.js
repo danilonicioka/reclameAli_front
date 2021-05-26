@@ -62,7 +62,7 @@ const url = "https://shielded-island-23034.herokuapp.com/";
     //Função para obter técnicos registrados
     function get_tecnicos(){
         return new Promise((resolve, reject) => {
-            axios.get(url + 'tecnicos/get_all').then((res) => {
+            axios.get(url + 'tecnicos').then((res) => {
                 resolve(res.data);
             }).catch((err) => {
                 reject(err);
