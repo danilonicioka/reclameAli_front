@@ -37,6 +37,11 @@ body{
     text-align: center;
 }
 
+#list-itens a{
+    color: #fff;
+    text-decoration:none;
+}
+
 #dashboard{
  width: 79%;
  right: 0%;

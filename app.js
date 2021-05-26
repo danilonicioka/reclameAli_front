@@ -175,5 +175,5 @@ app.listen(PORT, () => {
     console.log("Connection started at port: "+PORT);
 });
 
-
+//Exporta módulo app com as configurações
 module.exports = app;
